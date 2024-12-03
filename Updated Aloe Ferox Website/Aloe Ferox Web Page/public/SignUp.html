@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="Home.html" class="back-link">
+        <img src="Log_Images/back.png" alt="Back">
+    </a>
+    <div class="inner-container">
+        <h1>Sign Up</h1>      
+
+        <form action="/auth/signup" method="POST">
+            <label class="label">Email Address</label>
+            <input type="email" class="text-field" name="email" placeholder="Type email address" required>
+        
+            <label class="label">Username</label>
+            <input type="text" class="text-field" name="username" placeholder="Type username" required> <!-- Changed 'name' to 'username' -->
+        
+            <label class="label">Password</label>
+            <input type="password" class="text-field" name="password" placeholder="Type password" required>
+            
+            <button type="submit" class="log-button">Create Account</button>
+        </form>        
+
+        <span class="or-link">or <a href="Login.html">Login</a></span>
+    </div>
+
+    <script src="js functionality/signup.js"></script>    
+        
+</body>
+</html>

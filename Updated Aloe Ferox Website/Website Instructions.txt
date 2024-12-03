@@ -1,0 +1,9 @@
+Create a mongo database "Aloe_Ferox_Database". Collections/tables will be created automatically.
+
+Open folder in vs code and open a new terminal. NB!- Make sure to select and open the folder named "Aloe Ferox Web Page" in vs code.
+
+Start server (terminal): "npm start"
+
+Open browser in new tab and paste link: "http://localhost:8000/Home.html"
+
+Stop server (terminal): ctrl + c

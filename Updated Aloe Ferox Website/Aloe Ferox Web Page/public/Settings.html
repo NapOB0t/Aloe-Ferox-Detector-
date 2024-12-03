@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="settings-container">
+        <a href="Main.html" class="back-link">
+            <img id="back-image" src="Settings_Images/back.png" alt="Back">
+        </a>        
+        
+        <div class="profile-wrapper">
+            <img id="profile-image" src="User_Images/default.png" alt="profile" class="profile">
+            <label class="label" id="username-label">Username</label>
+            <!-- Button to open image selection -->
+            <button id="change-image-btn">Change Profile Picture</button>
+        
+            <!-- Dropdown or modal for image selection -->
+            <div id="image-selection" style="display: none;">
+                <h3>Select a new profile picture:</h3>
+                <img src="User_Images/user1.png" alt="User 1" class="selectable-image" data-image="User_Images/user1.png">
+                <img src="User_Images/user2.png" alt="User 2" class="selectable-image" data-image="User_Images/user2.png">
+                <img src="User_Images/user3.png" alt="User 3" class="selectable-image" data-image="User_Images/user3.png">
+                <img src="User_Images/user4.png" alt="User 4" class="selectable-image" data-image="User_Images/user4.png">
+                <img src="User_Images/user5.png" alt="User 5" class="selectable-image" data-image="User_Images/user5.png">
+                <img src="User_Images/user6.png" alt="User 6" class="selectable-image" data-image="User_Images/user6.png">
+                <img src="User_Images/user7.png" alt="User 7" class="selectable-image" data-image="User_Images/user7.png">
+                <img src="User_Images/user8.png" alt="User 8" class="selectable-image" data-image="User_Images/user8.png">
+                <img src="User_Images/user9.png" alt="User 9" class="selectable-image" data-image="User_Images/user9.png">
+                <img src="User_Images/user10.png" alt="User 10" class="selectable-image" data-image="User_Images/user10.png">
+            </div>
+        </div>              
+
+        <div class="settings-inner-container">
+            <div class="settings-left">
+                <label>Email</label>
+                <label>Dark mode</label>
+                <label>Date joined</label>
+                <a href="Home.html" class="sign-out">Sign Out</a>
+            </div>
+            
+            <div class="settings-right">
+                <p class="info">
+                    <span id="user-email">example@example.com</span> <!-- Email will be updated dynamically -->
+                    <button onclick="updateEmail()">Update</button>
+                </p>
+                <div class="dark-mode">
+                    <input type="checkbox" id="dark-mode-switch" onchange="toggleDarkMode()">
+                    <label for="dark-mode-switch"></label> <!-- Dark mode will be toggled dynamically -->
+                </div>                  
+                <p class="info">
+                    <span id="date-joined">####-##-##</span> <!-- Date will be updated dynamically -->
+                </p>         
+                <a href="#" class="delete-account" onclick="deleteAccount()">Delete account</a>    
+            </div>
+        </div>                    
+    </div>
+
+    <script src="js functionality/settings.js"></script>
+</body>
+</html>

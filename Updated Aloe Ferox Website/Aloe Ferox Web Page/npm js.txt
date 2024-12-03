@@ -1,0 +1,9 @@
+npm install express mongoose bcrypt dotenv cors jsonwebtoken
+npm install nodemon --save-dev
+
+http://localhost:8000/Home.html
+http://localhost:8000/Login.html
+http://localhost:8000/SignUp.html
+
+Start - npm start
+Stop - ctr + c
