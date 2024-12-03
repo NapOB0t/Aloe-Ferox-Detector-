@@ -25,17 +25,36 @@
         <div class="main-left-side">
             <p id="welcome-message">Welcome back user</p> <!-- Dynamic welcome message -->
             <br>
-            <button class="rounded-button" id="add-image-btn">Select an image</button>
-            <input type="file" id="image-input" accept="image/*" style="display: none;">
-            <button class="rounded-button" onclick="window.open('https://www.inaturalist.org/', '_blank')">
-                Go to iNaturalist Database
-            </button>
+            <form action="http://127.0.0.1:5000/upload" method="post" enctype="multipart/form-data" id="upload-form">
+                <button type="button" class="rounded-button" id="add-image-btn">Select an image</button>
+                <input type="file" name="image" accept="image/*" required class="hidden-input" id="fileInput" style="display: none;">
+                <button type="button" class="rounded-button" onclick="window.open('https://www.inaturalist.org/', '_blank')">
+                    Go to iNaturalist Database
+                </button>
+                <button type="submit" class="rounded-button" id="upload-btn">Upload Image</button>
+            </form>
         </div>
         <div class="divider"></div>
         <div class="main-right-side">
             <img src="Main_Images/ferox_default.png" alt="Ferox" class="image" id="ferox-image">
-            <button class="rounded-button" id="generate-results-btn" disabled>Generate Results</button>
         </div>
+    </div>
+
+    <!-- Graphs Section -->
+    <div class="graphs-container">
+        <div class="main-left-side">
+        <div class="graph">
+            <h3>Average Growth Trend over all the years (2010 - 2022)</h3>
+            <img src="./Charts/Average Growth Trend over all the years.png" alt="Graph 1" class="graph-image">
+        </div>
+        </div>
+        <div class="divider"></div>
+        <div class="main-right-side">
+        <div class="graph">
+            <h3>Seasonal Growth Patterns of Aloe Ferox</h3>
+            <img src="./Charts/SeasonalDistribution_Growth.png" alt="Graph 2" class="graph-image">
+        </div>
+    </div>
     </div>
 
     <script src="js functionality/main.js"></script>

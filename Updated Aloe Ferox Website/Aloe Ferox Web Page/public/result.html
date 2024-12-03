@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* Global Styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, lightgrey, #fafafa);
+        color: #333;
+        height: 100%;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
+
+    h1, h2 {
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #333;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        color: #555;
+    }
+
+    /* Container Styles */
+    .container {
+        background: linear-gradient(to right, lightgrey, #fafafa);
+        padding: 30px;
+        margin: 30px auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 800px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image Styling */
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+    }
+
+    /* List Styles */
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    li {
+        background: #fff;
+        margin-left: 100px;
+        margin-bottom: 15px;
+        padding: 18px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-size: 1.1rem;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+    li:hover {
+        transform: translateX(10px);
+        background-color: #f1f1f1;
+    }
+
+    /* Button Styles */
+    .button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 30px;
+        margin-top: 20px;
+        transition: background-color 0.3s, transform 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* Description Section Styles */
+    .description-section {
+        background: linear-gradient(to right, lightgrey, #fafafa);
+        padding: 30px;
+        margin: 30px auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 80%;
+        transition: all 0.3s ease;
+    }
+
+    .description-section h2 {
+        font-size: 1.75rem;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .description-section ul {
+        padding-left: 20px;
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .description-section li {
+    padding: 10px 0;
+    padding-left: 20px; 
+    margin: 8px 0;
+}
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .container, .description-section {
+            width: 90%;
+            margin: 15px auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container, .description-section {
+            width: 95%;
+            margin: 10px auto;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        .button {
+            padding: 10px 25px;
+        }
+
+        .description-section ul {
+            font-size: 0.95rem;
+        }
+    }
+</style>
+
+<body>
+    <!-- Label Descriptions Section -->
+    <div class="description-section">
+        <h2>Label Descriptions</h2>
+        <ul>
+            <li><strong>No Evidence:</strong> This label indicates that no visible signs of reproductive features (such as buds, flowers, or fruit) are present in the image. The plant may still be in its early vegetative phase, or the image may not clearly show these features. Essentially, it means no reproductive activity is detected at this moment.</li>
+            <li><strong>Buds:</strong> This label indicates that the plant shows signs of buds. In Aloe ferox, these buds are small, cylindrical, and tightly clustered at the top of a tall flower spike. They start as reddish or orange and have a smooth, waxy texture. As the buds mature, they gradually open into tubular, bell-shaped flowers that transition to bright orange or red hues.</li>
+            <li><strong>Flower:</strong> This label indicates that the plant in the image is actively flowering. The model detects open, vibrant flowers, typically tubular and brightly colored (often red or orange). These flowers are arranged in dense clusters along tall flower stalks and signal that the plant is in full bloom and attracting pollinators.</li>
+            <li><strong>Fruit:</strong> This label indicates that the plant shows signs of fruit. The model detects small, capsule-like fruits on the plant, which are usually dry and contain seeds. The presence of fruit suggests that the plant has completed its flowering cycle and is in the process of producing seeds for reproduction.</li>
+        </ul>
+    </div>
+
+    <!-- Prediction Results Section -->
+    <div class="container">
+        {% if img_data %}
+            <img src="data:image/jpeg;base64,{{ img_data }}" alt="Uploaded Image">
+        {% else %}
+            <p>No image to display.</p>
+        {% endif %}
+        
+        <h2>Labels:</h2>    
+        <ul>
+            {% if labels %}
+                {% for label in labels %}
+                    <li>{{ label }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No predictions available.</li>
+            {% endif %}
+        </ul>
+        
+        <a class="button" href="javascript:history.back()">Go Back</a>
+    </div>
+</body>
+</html>

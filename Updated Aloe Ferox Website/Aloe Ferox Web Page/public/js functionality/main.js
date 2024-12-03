@@ -40,10 +40,10 @@ window.onload = function() {
 
 // Handle adding an image from the user's device
 document.getElementById('add-image-btn').addEventListener('click', function() {
-    document.getElementById('image-input').click(); // Trigger file input click
+    document.getElementById('fileInput').click(); // Open file dialog
 });
 
-document.getElementById('image-input').addEventListener('change', function(event) {
+document.getElementById('fileInput').addEventListener('change', function(event) {
     const file = event.target.files[0]; // Get the selected file
     const generateResultsBtn = document.getElementById('generate-results-btn');
     
@@ -118,3 +118,4 @@ document.querySelectorAll('.selectable-image').forEach(function(image) {
         .catch(error => alert('Error: ' + error.message));
     });
 });
+
